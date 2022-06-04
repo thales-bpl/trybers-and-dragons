@@ -1,0 +1,1 @@
+docker exec -it trybers_and_dragons bash
