@@ -12,7 +12,7 @@ echo $' === === project log === ===
 
   === SRCs ===
   Repo: https://github.com/tryber/sd-016-b-project-trybers-and-dragons
-  PR: https://github.com/tryber/sd-016-b-project-trybers-and-dragons
+  PR: https://github.com/tryber/sd-016-b-project-trybers-and-dragons/pull/101
 
   === README FIX ===
 
