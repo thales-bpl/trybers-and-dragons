@@ -1,6 +1,6 @@
 import Archetype from '../Archetypes';
 import Energy from '../Energy';
-import Fighter from '../Fighter';
+import Fighter, { SimpleFighter } from '../Fighter';
 import Race from '../Races';
 import Elf from '../Races/Elf';
 import Mage from '../Archetypes/Mage';
@@ -65,7 +65,7 @@ class Character implements Fighter {
     return this._lifePoints;
   }
 
-  public attack(enemy: Fighter): void {
+  public attack(enemy: SimpleFighter): void {
     enemy.receiveDamage(this._strength);
   }
 
@@ -81,14 +81,14 @@ class Character implements Fighter {
     this._lifePoints = this._maxLifePoints;
   }
 
-  public specialCrit(enemy: Fighter): void {
+  public specialCrit(enemy: SimpleFighter): void {
     const critMultiplier = 0.2 * getRandomInt(6, 8);
     const critDamage = this._strength * critMultiplier;
     enemy.receiveDamage(critDamage);
     console.log(`It's a Crit! You hit for x${critMultiplier} damage`);
   }
 
-  public specialLifesteal(enemy: Fighter): void {
+  public specialLifesteal(enemy: SimpleFighter): void {
     const initEnemyHealth = enemy.lifePoints;
     enemy.receiveDamage(this._strength);
     const damageDealt = initEnemyHealth - enemy.receiveDamage(this._strength);
