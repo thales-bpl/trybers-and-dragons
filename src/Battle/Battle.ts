@@ -1,4 +1,3 @@
-// import Character from '../Character';
 import Fighter from '../Fighter';
 
 abstract class Battle {

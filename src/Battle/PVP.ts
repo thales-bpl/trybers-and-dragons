@@ -1,6 +1,5 @@
 import Battle from './Battle';
 import Fighter from '../Fighter';
-// import Character from '../Character';
 import getRandomInt from '../utils';
 
 class PVP extends Battle {
