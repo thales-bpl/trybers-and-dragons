@@ -92,12 +92,12 @@ class Character implements Fighter {
     const initEnemyHealth = enemy.lifePoints;
     enemy.receiveDamage(this._strength);
     const damageDealt = initEnemyHealth - enemy.receiveDamage(this._strength);
-    const healing = damageDealt / 2;
-    this._lifePoints += healing;
+    const lifeSteal = damageDealt / 2;
+    this._lifePoints += lifeSteal;
     if (this._lifePoints > this._maxLifePoints) {
       this._lifePoints = this._maxLifePoints;
     }
-    console.log(`You fed off of enemy's health! You healed ${healing} HP`);
+    console.log(`You fed off enemy's health! You healed ${lifeSteal} HP`);
   }
 }
 
