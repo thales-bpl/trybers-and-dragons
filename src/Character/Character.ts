@@ -81,24 +81,24 @@ class Character implements Fighter {
     this._lifePoints = this._maxLifePoints;
   }
 
-  public specialCrit(enemy: SimpleFighter): void {
+  public special(enemy: SimpleFighter): void {
     const critMultiplier = 0.2 * getRandomInt(6, 8);
     const critDamage = this._strength * critMultiplier;
     enemy.receiveDamage(critDamage);
     console.log(`It's a Crit! You hit for x${critMultiplier} damage`);
   }
 
-  public specialLifesteal(enemy: SimpleFighter): void {
-    const initEnemyHealth = enemy.lifePoints;
-    enemy.receiveDamage(this._strength);
-    const damageDealt = initEnemyHealth - enemy.receiveDamage(this._strength);
-    const lifeSteal = damageDealt / 2;
-    this._lifePoints += lifeSteal;
-    if (this._lifePoints > this._maxLifePoints) {
-      this._lifePoints = this._maxLifePoints;
-    }
-    console.log(`You fed off enemy's health! You healed ${lifeSteal} HP`);
-  }
+  // public specialLifesteal(enemy: SimpleFighter): void {
+  //   const initEnemyHealth = enemy.lifePoints;
+  //   enemy.receiveDamage(this._strength);
+  //   const damageDealt = initEnemyHealth - enemy.receiveDamage(this._strength);
+  //   const lifeSteal = damageDealt / 2;
+  //   this._lifePoints += lifeSteal;
+  //   if (this._lifePoints > this._maxLifePoints) {
+  //     this._lifePoints = this._maxLifePoints;
+  //   }
+  //   console.log(`You fed off enemy's health! You healed ${lifeSteal} HP`);
+  // }
 }
 
 export default Character;
