@@ -5,10 +5,11 @@ interface Fighter {
   strength: number;
   defense: number;
   energy?: Energy;
+  receiveDamage(attackPoints: number): number;
   attack(enemy: Fighter): void;
-  special(enemy: Fighter): void;
   levelUp(): void;
-  receiveDamage(attackPoints: number): void;
+  specialCrit(enemy: Fighter): void;
+  specialLifesteal(enemy: Fighter): void;
 }
 
 export default Fighter;
