@@ -24,7 +24,7 @@ class Dragon extends Monster {
       this._strength *= 1.5;
       this.attack(enemy);
       console.log('The dragon swoops in against his prey!');
-      this._strength /= 0.3;
+      this._strength /= 0.6;
     }
   }
 }
